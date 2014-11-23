@@ -1,0 +1,30 @@
+\titre{Algo polynomial :} Complexité en $O(n^k)$
+
+\titre{Types de problèmes :}
+\begin{enumerate}
+	\item D : Décision (OUI ou NON)
+	\item O : Optimisation (+ grande ou + petite valeur qui satisfait un critère)
+	\item E : Existence (on cherche un élément qui satisfait un critère)
+\end{enumerate}
+La plupart des problèmes peuvent se décliner sous ces 3 formes, et si D est polynomial alors les autres aussi. On se contentera donc d'étudier la version D des problèmes. \\
+
+\titre{Réduction polynomial :} Soient $P_1$ et $P_2$ deux problèmes.\\
+On appelle réduction polynomiale de $P_1$ vers $P_2$ un algo $R$ polynomial qui transforme toute instance $I_1$ de $P_1$ en une instance $I_2$ de $P_2$ telle que $P_1(I_1) = P_2(I_2)$. \\
+S'il existe une réduction polynomiale de $P_1$ vers $P_2$, on note $P_1 \leq_p P_2$. \\
+
+\titre{Théorème :} Soient $P_1$ et $P_2$ deux problèmes tels que $P_1 \leq_p P_2$.
+\begin{itemize}
+	\item Si $P_2$ est polynomial alors $P_1$ aussi
+	\item Si $P_1$ n'est pas polynomial alors $P_2$ non plus (forme contraposée)
+\end{itemize}
+
+\titre{Preuve} Il suffit de poser $A_1 = A_2 \circ R$. Si $A_2$ est en $O(n^k)$ et $R$ en $O(n^l)$, alors $A_1$ est en $O(n^{lk})$. \\
+
+\titre{Equivalence polynomiale :} On dit que $P_1$ et $P_2$ sont polynomialement équivalents si $P_1 \leq_p P_2$ et $P_2 \leq_p P_1$. On le note $P_1 =_p P_2$\\
+
+\titre{Relations :} $=_p$ est une relation d'équivalence et $\leq_p$ est une relation d'ordre. \\
+
+\titre{Théorème :} Tous les problèmes polynomiaux sont polynomialement équivalents (même classe d'équivalence). \\
+
+\titre{Preuve :} Soit $I_{OUI}$ et $I_{NON}$ deux instances de $P_2$ telles que $P_2(I_{OUI}) = OUI$ et $P_2(I_{NON}) = NON$. \\
+Il suffit de définir ainsi l'algo $R$ : \\Si $P_1(I) = OUI$ Alors retourner $I_{OUI}$ \\ Sinon retourner $I_{NON}$

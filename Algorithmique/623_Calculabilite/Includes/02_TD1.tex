@@ -1,0 +1,60 @@
+\titre{Exercice 1}
+\begin{enumerate}
+\item 
+	\begin{itemize} 
+		\item $.*\backslash.jpg\$ $
+		\item $.*\backslash.jpe?g\$ $
+		\item $.*\backslash.(j|J)(p|P)(e|E)?(g|G)\$ $
+		\item $.*\backslash.((j|J)(p|P)(e|E)?(g|G))|((g|G)(i|I)(f|F))|((p|P)(n|N)(g|G))\$ $
+	\end{itemize}
+
+\item 
+	$$ projet-bak-[0-9]+\backslash.tgz $$
+
+\item 
+	$$((\backslash\backslash")|[^{\et}"])*$$
+
+\item 
+	$$(+|-)? ( ([0-9]+\backslash.[0-9]+) | ([0-9]+\backslash.?) | (\backslash.[0-9]+) ) ((e|E)(+|-)?[0-9]+)?$$
+	
+\end{enumerate}
+
+\titre{Exercice 2}
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item $(a.a.a)^*$
+		\item $a.a.a.(a.a.a)^*$
+		\item $((a.a.a)^*) + ((a.a.a.a.a)^*)$
+		\item $(a.a.a.((a.a)+1))^*$
+	\end{enumerate}
+
+\item 
+ $$c^*((a.b)^*.(1+a) + (b.a)^*(1+b))$$
+
+\item
+ $$ ((a+1).b^*)^*.(a+1) $$
+
+\item
+ $$ ((a+1).( ((b+1).c^*)^*.(b+1) )^*.(a+1)$$
+
+\item
+\begin{enumerate}
+	\item Un mot de $L(R^*)$ est une concaténation de mots de $L(R)$, un mot de $L((R^*)^*)$ est une concaténation de concaténations de mots de $L(R)$, donc c'est une concaténation de mots de $L(R)$.
+	\item Le mot vide est clairement dans les deux langages. Un mot non vide de $L((R_1R_2)^*)$ est de la forme $r_{1,1}r_{2,1} \ldots r_{1,n}r_{2,n} = r_{1,1}(r_{2,1} \ldots r_{1,n})r_{2,n}$ donc c'est bien la concaténation d'un mot de $L(R_1)$, puis un mot de $L((R_1R_2)^*)$, puis un mot de $L(R_2)$, c'est à dire un mot de $L(R_1(R_1R_2)^*R_2)$.
+	\item Les mots de $L((R_1+R_2)^*)$ sont des concaténations de mots qui sont soit dans $L(R_1)$ soit dans $L(R_2)$. Considérons un tel mot $u$, on enlève les derniers mots qui sont dans $L(R_1)$ (éventuellement aucun), pour qu'il termine par un mot de $L(R_2)$. On a $u=v.w$ avec $w \in L(R_1^*)$. et $v$ une concaténation de mots dans $L(R_1)$ et dans $L(R_2)$, le dernier de ces mots étant dans $L(R_2)$. On découpe cette concaténation dès qu'on rencontre un mot de $L(R_2)$, ce qui donne des concaténations dans $L(R_1^*R_2)$. La réciproque est triviale.
+	\item Le mot vide est dans les deux langages. Les mots de la deuxième expression sont clairement dans $L(R^*)$. Vérifions que tout mot non vide de $L(R^*)$ est dans $L((1+R)(RR)^*)$ : S'il contient un mot de $L(R)$, c'est un mot de $L(1+R)$ suivi d'aucun mot de $L(RR)$. S'il contient deux mots c'est aucun mot de $L(1+R)$ suivi d'un mot de $RR$. Pour un nombre pair $n=2k$ de mots, c'est aucun mot de $L(1+R)$ concaténé à $k$ mots de $L(RR)$, si c'est un nombre impair $n=2k+1$, c'est un mot de $L(1+R)$ concaténé à $k$ mots de $L(RR)$.
+\end{enumerate}
+
+\item
+Quand a-t-on $L(E) = \vide$ ? réponse : on fait une fonction récursive à partir des cas de base : 
+\begin{itemize}
+	\item $L(0) = \vide$\\
+	\item $L(1) \neq \vide$\\
+	\item $L(s) \neq \vide$\\
+	\item $L(E_1 + E_2) = \vide \equi L(E_1) = \vide \et L(E_2) = \vide$
+	\item $L(E_1E_2) = \vide \equi L(E_1) = \vide \ou L(E_2) = \vide$
+	\item $L(E^*) \neq \vide$
+\end{itemize}
+
+\end{enumerate}
