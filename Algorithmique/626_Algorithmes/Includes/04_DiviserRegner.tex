@@ -1,0 +1,36 @@
+\titre{Complexité des algos "diviser pour régner" :} Cas $T(n) = aT(\frac{n}{b}) + f(n)$ avec $a \geq 1$ , $b > 1$ et $T(0) = \theta(1) (=1)$ (on peut remplacer $\frac{n}{b}$ par sa partie entière inférieure ou supérieure) \\
+
+\titre{Propriété :} 
+\begin{itemize}
+	\item Si $f(n) = O(n^{\mathrm{log}_ba-\varepsilon})$ ($\varepsilon > 0)$ alors $T(n)\in \theta(n^{\mathrm{log}_ba})$
+	\item Si $f(n) = \theta(n^{\mathrm{log}_ba})$ alors $T(n) = \theta(n^{\mathrm{log}_ba}\ln n)$
+	\item Si $f(n) = \Omega(n^{\mathrm{log}_ba+\varepsilon})$ ($\varepsilon > 0$) et $af(\frac{n}{b}) \geq cf(n)$ pour $n$ assez grand et $c$ une constante $< 1$. Alors $T(n) \in \theta(f(n))$
+\end{itemize}
+
+\titre{Exemple 7 :} La recherche dichotomique
+\begin{itemize}
+	\item $T(n) = T(\frac{n}{2}) + 1$ 
+	\item On est dans le deuxième cas, donc $T(n) = \theta(\ln n)$
+\end{itemize}
+
+\titre{Exemple 8 :} Tri fusion \\
+\code{
+Fonction TriFusion(V:Tab,n:entier)\\
+Var $n_1,n_2$ : entier \\
+Var $V_1,V_2$ : Tab \\
+Debut \\
+	Si $n \geq 2$ Alors \\
+		Diviser$(V,n,V_1,n_1,V_2,n_2)$ ($\theta(n)$)\\
+		TriFusion$(V_1,n_1)$\\
+		TriFusion$(V_2,n_2)$\\
+		Fusionner$(V_1,n_1,V_2,n_2,V)$ ($\theta(n)$)\\
+	FinSi\\
+Fin \\
+}
+
+Temps d'exécution :
+\begin{itemize}
+	\item $T(n) = 2T(\frac{n}{2}) + \theta(n)$
+	\item $f(n) = \theta(n)$ donc on est dans le deuxième cas
+	\item $T(n) = \theta(n\ln n)$
+\end{itemize}

@@ -1,0 +1,20 @@
+\titre{Organisation de la RAM pendant l'exécution d'un processus} \\
+\includegraphics[width=50px]{Images/15_Ram.pdf}\\
+
+\titre{EIP} Pointeur d'instructions. \\
+
+\titre{EBP} Pointeur de base : les variables locales sont référencées par rapport à EBP (ex : la variable x est à EBP - 3) \\
+
+\titre{Organisation de l'espace d'une fonction dans la pile :} \\ \\
+\begin{tabular}{|c|} \hline
+	Variables locales \\ \hline
+	EBP \\ \hline
+	Adresse de retour (instruction suivante dans le code) \\ \hline
+	Arguments de la fonction \\ \hline
+\end{tabular}\\
+
+\newpage
+
+\titre{Exemple :} \\
+\includegraphics[width=200px]{Images/16_ExemplePile.pdf}\\
+

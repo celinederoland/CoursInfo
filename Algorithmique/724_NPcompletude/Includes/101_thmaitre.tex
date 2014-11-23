@@ -1,0 +1,25 @@
+
+\titre{Fonctions de complexité :}
+\begin{enumerate}
+	\item $T(n) = 2T(\frac{n}{2}) + O(1)$, $\log_ba=\log_22=1$, $1\in O(n^{1-\varepsilon})$ donc $T(n)\in O(n)$
+	\item $T(n) = T(\frac{n}{2}) + O(1)$, $\log_ba=\log_21=0$, $1 \in O(n^0)$ donc $T(n)\in O(\log n)$
+	\item $T(n) = 2T(\frac{n}{2}) + O(n)$, $\log_ba=\log_22=1$, $n \in \theta(n^1)$ donc $T(n) \in O(n\log n)$
+	\item $T(n) = T(\frac{n}{k}) + O(1)$, $\log_ba=\log_k1=0$, $1 \in O(n^(1-\varepsilon))$ donc $T(n)\in O(\log n)$
+\end{enumerate}
+
+\titre{ Algo :} On veut trouver les 2 points les plus proches dans un ensemble de points du plan. \\
+
+\begin{itemize}
+	\item Algo naïf(T: Tableau de points) :\\
+d = $\infty$ \\
+n = taille de T\\
+Pour i de 0 à n-2 Faire \\
+	\hspace*{1cm} Pour j de i+1 à n-1 Faire \\
+		\hspace*{2cm} Si Dist(T[i],T[j]) < d Alors d = Dist(T[i],T[j])\\
+	\hspace*{1cm} FinPour\\
+FinPour\\
+Retourne d\\
+	\item Idée diviser pour mieux régner : on fait la partie gauche du plan ($d_g$) et la partie droite ($d_d$), on appelle $d$ le min des deux. Il faut regarder dans une bande de largeur $2d$ autour de la frontière. En triant les points selon $y$ et en observant une boule de rayon $d$ autour de chaque point, on peut se rendre compte que dans cette bande, lorsqu'on étudie un point on a pas besoin d'aller chercher plus loin que 7 points de plus pour en trouver un plus près que $d$ du point de départ. C'est donc en temps constant pour chaque point. 
+	\item Voir algo sur fiche. $T(n) = 2T(\frac{n}{2}) + O(n\log n)$
+	\item $\log_ba =\log_22 =1$, comparer $n\log n$ et $n^1$, $n\log n \in \Omega(n^{1+\varepsilon})$ donc $T(n)\in O(n\log n)$
+\end{itemize}

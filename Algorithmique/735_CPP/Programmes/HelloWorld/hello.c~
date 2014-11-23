@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main(int argc, char** argv)
+{
+	int *x = malloc(20);
+	std::cout << "Hello World!" << std::endl;
+	return 0;
+}
+
+//:: opérateur de portée : cout est défini dans le namespace std

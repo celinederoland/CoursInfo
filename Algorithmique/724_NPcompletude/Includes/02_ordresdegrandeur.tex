@@ -1,0 +1,39 @@
+\titre{$O$ :} Une fonction $f(n)$ est dans $O(g(n))$ si il existe deux constantes strictement positives $K$ et $C$ telles que 
+$\forall n > k, f(n) \leq g(n)$ \\
+Version équivalente : $\displaystyle{\lim_{n\rightarrow \infty} \frac{f(n)}{g(n)} < \infty}$\\
+
+\titre{$\Omega$ :} $f(n) \in \Omega(g(n))$ si $g(n) \in O(f(n))$. \\
+
+\titre{$\theta$ :} $f(n) \in \theta(g(n))$ si $g(n) \in O(f(n))$ et $f(n) \in O(g(n))$ \\
+
+\titre{Propriétés du $O$ :} Soit $f$ et $g$ tq $f(n) \in O(g(n))$. Soient $a,b,c$ des constantes et $x$ une variable.
+\begin{enumerate}
+	\item Si $a\geq0$ et $\forall n \geq a, f(n) < g(n)$ alors $f(n) \in O(g(n))$
+	\item Si $a\geq0$ alors $af(n) \in O(f(n))$
+	\item Si $a\geq1$ et $b\geq0$ alors $a^{n+b}\in O(a^n)$
+	\item Si $f(n)\in O(g(n))$ et $f_1(n) \in O(g_1(n))$ alors $f(n) + f_1(n) \in O(\max(g(n),g_1(n)))$
+	\item Si $f(n) \in O(g(n))$ et $f_1(n) \in O(g_1(n))$ alors $f(n)f_1(n) \in O(g(n)g_1(n))$
+	\item Si $a \geq 2, b \geq 1, c > 0$ alors $\log_a(n^b) \in O(n^c)$
+	\item Si $a > 0$ et $b > 1$ alors $n^a\in O(b^n)$
+\end{enumerate}
+\newpage
+\titre{preuves}
+\begin{enumerate}
+	\item On pose $k=a$ et $C=1$.
+	\item On pose $k=1$ et $C=a$.
+	\item $a^{n+b}=a^ba^n$, on applique le cas 2 avec $f(n) = a^n$
+	\item On prend $(k,C)$ pour $f(n) \in O(g(n))$, $(k_1,C_1)$ pour $f_1(n) \in O(g_1(n))$ \\
+			On prend $(k_2,C_2)$ avec $k_2=max(k,k_2)$ et $C_2=2\max(C,C_1)$\\ On pose $h(n) = \max(g(n),g_1(n))$ \\
+			On a pour $n>k_2$ : $f(n) + f_1(n) \leq Cg(n) + C_1g_1(n) \leq \max(C,C_1)h(n) + \max(C,C_1)h(n) \leq C_2h(n)$ 
+	\item On prend $(k,C)$ pour $f(n) \in O(g(n))$, $(k_1,C_1)$ pour $f_1(n) \in O(g_1(n))$ 
+			On prend $(k_2,C_2)$ avec $k_2=max(k,k_2)$ et $C_2=CC_1$\\ On pose $h(n) = g(n)g_1(n))$ \\
+			On a pour $n>k_2$ : $f(n)f_1(n) \leq Cg(n)C_1g_1(n) \leq \C_2h(n)$ 
+	\item $\log_a(n^b) = b\log_a(n)$ donc il reste à montrer que $\log_a(n) \in O(n^c)$ \\
+		Il suffit de faire $\lim \frac{\ln n}{n^c}$, qui vaut 0 par le lemme de l'hôpital.
+	\item Il suffit de faire $\lim \frac{n^a}{b^n}$ avec le lemme de l'hôpital.
+\end{enumerate}
+
+\titre{Idée :} On cherche à exprimer la complexité d'un algo en fonction de la taille $n$ de l'instance en entrée. \\
+
+
+

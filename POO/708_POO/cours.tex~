@@ -1,0 +1,20 @@
+\documentclass[a5paper,12pt]{article}
+\usepackage{../style}
+
+
+\newcommand{\montitre}{POO }
+
+
+\begin{document}
+
+\fiche{Introduction}
+\input{Includes/01_intro.tex}
+
+\fiche{Le langage}
+\input{Includes/02_langage.tex}
+
+\fiche{MVC}
+\input{Includes/03_MVC.tex}
+
+
+\end{document}

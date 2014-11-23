@@ -1,0 +1,34 @@
+\documentclass[a5paper,12pt]{article}
+\usepackage{/home/celine/Dropbox/MesCours/style}
+
+
+\newcommand{\montitre}{Algo }
+
+
+\begin{document}
+
+\fiche{Introduction}
+\input{Includes/01_Intro.tex}
+
+\fiche{Connexité}
+\input{Includes/02_Connexite.tex}
+
+\fiche{Arbres}
+\input{Includes/03_Arbres.tex}
+
+\fiche{Parcours de graphes}
+\input{Includes/04_ParcoursGraphes.tex}
+
+\fiche{TD 1}
+\input{Includes/05_TD1.tex}
+
+\fiche{TD 2}
+\input{Includes/06_TD2.tex}
+
+\fiche{Chemins de longueur minimale}
+\input{Includes/07_CheminMin.tex}
+
+\fiche{Problèmes de maximisation}
+\input{Includes/08_Maximisation.tex}
+
+\end{document}

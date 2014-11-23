@@ -1,0 +1,37 @@
+\titre{Objectif :} Etudier les algortithmes pour résoudre des problèmes géométriques. \\
+
+\titre{Applications :}
+\begin{enumerate}
+	\item CAO
+	\item Jeux vidéos en 2D et 3D
+	\item Résistance des matériaux
+	\item Robotique
+	\item Réseaux
+\end{enumerate}
+
+\titre{Géométrie euclidienne :} Points et vecteurs du plan ou de l'espace. Cela suppose qu'on dispose d'un type nombre réel (problème : sensibilité aux perturbations). \\
+
+\titre{Solutions à ces problèmes :}
+\begin{enumerate}
+	\item Méthodes algébriques
+	\item Utiliser des opérations "pas dangereuses" (addition, soustraction), pour la multiplication il faut une précision doublée, la division est dangereuse
+	\item Utiliser des nombres à précision arbitraire (fonctionne mais ralentit le code d'un facteur 100 à 200)
+	\item Utiliser seulement le signe plutôt que la valeur
+	\item Ne faire des calculs qu'en cas de "doute" (calcul paresseux)
+	\item Tout faire avec des entiers (géométrie discrète)
+\end{enumerate}
+Il existe des bibliothèques standard pour faire ça (ex : CGal en C++)\\
+\includegraphics{fig7.pdf}
+
+\titre{Définition des éléments de base dans le plan :}
+\begin{enumerate}
+\item typedef struct { double x; double y; } Point; 
+\item typedef struct { Point O; Point E; } Segment; C'est l'ensemble des points entre O et E $\rightarrow$ comment faire ça précisément ? On utilise les combinaisons linéaires sur O et E : $P = \alpha O + (1 - \alpha) E$ avec $\alpha \in [0;1]$ ie $[OE]=\{ \alpha O + (1 - \alpha) E \tq \alpha \in [0;1] \}$ cet ensemble est appelé ensemble des combinaisons convexes.
+\item Longueur du segment $[OE]$ = distance euclidienne entre $O$ et $E$ = norme de $\vec{OE}$ = $\sqrt{(E.x - O.x)^2 - (E.y - O.y)^2}$. En géométrie algorithmique, on privilégie la distance au carrée (pour les erreurs et le temps de calcul).
+\end{enumerate}
+
+\titre{Question typique :} Etant donné un point $P$ et une droite $(P_1P_2)$, le point est il sur la droite, à sa gauche et à sa droite ? On utilise le déterminant de $\vec{P_1P_2},\vec{P_1P}$ (positif : $P$ est à gauche, négatif : $P$ est à droite, nul : $P$ est sur la droite.) Cela s'appelle la fonction d'orientation : retourne $(P_2.x - P_1.x)(P_2.y - P_1.y) - (P_2.y - P_1.y)(P.x - P_1.x)$\\
+
+\titre{Question :} Comment déterminer si deux segments consécutifs $[P_1P_2]$ et $[P_2P_3]$ forment un vira	ge à droite ? Réponse on regarde si Orientation($P_1,P_2,P_3$) est négatif. \\
+
+\titre{Question :} Comment déterminer si deux segments sont sécants ? $[P_1P_2]$ et $[P_3P_4]$ s'intersectent si $P_1$ et $P_2$ ne sont pas du même côté de $[P_3P_4]$ et que $P_3$ et $P_4$ ne sont pas du même côté de $[P_1P_2]$

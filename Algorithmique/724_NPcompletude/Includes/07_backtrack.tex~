@@ -1,0 +1,14 @@
+\titre{Principe :} Un algo qui progresse vers une solution en faisant des choix plus ou moins arbitraires et qui revient en arrière lorsqu'il est bloqué avant d'atteindre une solution. Si tous les choix ont été explorés, on en conclut qu'il n'existe pas de solution. \\
+
+\titre{Avantages :}
+\begin{enumerate} 
+	\item Facilement adaptable à beaucoup de problèmes 
+	\item Facile à implémenter grâce à la récursivité
+\end{enumerate}
+
+\titre{Inconvénient :} 
+\begin{enumerate} 
+	\item Produit souvent une complexité exponentielle
+\end{enumerate}
+
+\titre{Algo : Sudoku}

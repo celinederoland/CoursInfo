@@ -1,0 +1,47 @@
+\titre{Conventions d'écriture}
+\begin{itemize}
+	\item Les noms de classe et les variables globales commencent par une majuscule (cf Smalltalk inspect. en eyetreeInspector pour voir la liste de toutes les classes).
+	\item Les noms des variables d'instance et des méthodes commencent par une minuscule.
+	\item les caractères sont préfixés par \$
+	\item Les chaînes de caractère sont entre simple quotes
+	\item Les commentaires sont entre guillemets
+	\item Les tableau \#(el1 el2 \ldots)
+	\item Les symboles sont préfixés par \#
+\end{itemize}
+
+\titre{Concepts de base}
+\begin{itemize}
+	\item Tout objet est instance unique d'une classe (pas de prototype : il faut créer la classe en premier, et ensuite on ne peut pas changer de classe).
+	\item Encapsulation des données : les variables d'instance sont protected.
+	\item Les variables sont non typés (on cherche la méthode d'après la classe de l'objet référencé par la variable et non d'après le type de la variable).
+	\item Liaison purement dynamique.
+	\item self = pseudo variable désignant le receveur du message, utilisable uniquement dans les méthodes et obligatoire pour appeler une autre méthode de la même classe.
+	\item super = pseudo variable désignant le receveur du message, utilisable uniquement dans les méthodes, indiquant que la recherche de la méthode doit se faire à partir de la surclasse de la classe qui implémente la méthode.
+	\item Envoi de message < objet receveur > < message >. Tout envoi de message retourne un objet (l'objet receveur si pas précisé dans la définition de la méthode).
+	\item Il n'y a pas de structure de contrôle (uniquement des envois de messages)
+	\item Comportement différent $\impl$ Classes différentes
+\end{itemize}
+
+\titre{3 types de messages}
+\begin{itemize}
+	\item unaire sans paramètre
+	\item binaire 1 ou 2 caractères non alphanumériques, 1 seul argument
+	\item "keywords" au moins 1 argument
+\end{itemize}
+
+\titre{Priorité :} Parenthèses, unaires, binaires, keywords
+
+\titre{Services de contrôle :}
+\begin{itemize}
+	\item Conditionnelle : cas particulier de ifClasse
+	\item Itérations :
+		\begin{itemize}
+			\item whileTrue, whileFalse : \\
+				whileTrue: aBlock 
+				\\self value
+				\\ifTrue: [ 
+				\\aBlock value. 
+				\\self whileTrue: aBlock ] 
+			\item 1 to: 10 do: [:i | x := x + i]
+		\end{itemize}
+\end{itemize}

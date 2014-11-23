@@ -1,0 +1,47 @@
+\titre{Principe du chiffrement asymétrique :}
+\begin{itemize}
+	\item Je donne ma clé publique
+	\item L'autre donne sa clé publique.
+	\item Je chiffre avec la clé publique du destinataire et il déchiffre avec sa clé privée
+	\item Le destinataire chiffre avec ma clé publique et je déchiffre avec ma clé privée
+\end{itemize}
+
+\titre{Différences :}\\
+\begin{tabular}{p{0.5\linewidth}|p{0.5\linewidth}}
+	Symétrique & Asymétrique \\ \hline \hline
+	plus rapide (la clé est sur 128bits) & lent (la clé est sur 2048bits) \\ \hline
+	phase critique : échange de la clé & échange des clés facilités \\ \hline
+	la confidentialité est assurée & il faut s'assurer de l'identité de l'émetteur de la clé publique \\ \hline
+\end{tabular}
+
+\titre{Code chiffré :} On dit qu'il est pseudo-aléatoire :
+\begin{itemize}
+	\item pseudo : ce n'est pas aléatoire
+	\item aléatoire : ça a l'air aléatoire (on ne peut pas reconnaitre des motifs)
+\end{itemize}
+
+\titre{DES :} Data Encryption Service \\
+
+\titre{AES :} Advanced Encryption Service \\
+
+\titre{Problématique du changement d'algorithme :} Ce sont des puces qui réalisent le cryptage, donc il faut du matériel équipé de ces puces. \\
+
+\titre{Pièges :} Attention : il ne faut pas chiffrer par caractère, car il est alors facile de trouver la correspondance 'caractère' / 'caractère chiffré'.\\
+
+\titre{CBC :} Cipher Bloc Chaining
+
+\titre{Exemple :} Chiffrement d'une connexion WIFI. \\
+\begin{tabular}{l|l|l|l|l}
+	@MAC-D & @MAC-Src & Ethertype & VI & \ldots zone chiffrée \ldots \\
+\end{tabular} \\
+Côté récepteur, on prend la clé et on la concatène avec le VI reçu et on génère le même R que côté émetteur. \\
+On fait un XOR entre le R et le message reçu, on obtient le message en clair. \\
+Il faut connaitre la clé pour générer le R, et ensuite faire le XOR. \\
+Le pirate connait le VI mais pas la clé, donc il ne peut pas déchiffrer. \\
+Le R est toujours différent donc le pirate ne peut pas reconnaitre des motifs en se basant sur le format classique des trames. \\
+
+\titre{Faille principale du WEP :} Le VI est sur 24 bits, donc environ 16 millions de possibilités. On a à peu près 20 Mbits/s de débit utile sur le réseau, la taille moyenne d'une trame est 1000 octets = 8000 bits. \\
+Combien de trames par secondes ? $20.10^6 / 8.10^3 = 2 500$ \\
+Au bout de combien de temps les VI rebouclent ? $16.10^6 / 2 500 = 6400s = 1h45$\\
+Comme ça reboucle fréquemment, il est impossible d'empêcher de rejouer les VI. \\
+Exemple : Le pirate va capturer une trame ARP avec un VI donné. Il capture C = M XOR R. Il devine M car il connait les trames ARP. Il calcule R = C XOR M. Il connait $R_{VI_1}$. Il émet des trames en utilisant ce $R_{VI_1}$. Lorsque le point d'accès répond avec un autre $VI$, or le pirate connait la réponse donc il peut calculer $R_{VI_2}$. A la fin il peut posséder une table de correspondance pour chaque $VI$ (sans avoir eu besoin de découvrir la clé).

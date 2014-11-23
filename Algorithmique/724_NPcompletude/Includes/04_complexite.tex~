@@ -1,0 +1,9 @@
+\titre{Idée :} On cherche à exprimer la complexité d'un algo en fonction de la taille $n$ de l'instance en entrée. \\
+
+\titre{Rq :} 
+\begin{itemize} 
+	\item Lorsque ça ne dépend pas de la taille de l'entrée, c'est $O(1)$ \\
+	\item Si on boucle $m$ fois, avec une fonction $f(n)$ pour la complexité d'un passage dans la boucle, alors c'est $O(mf(n))$
+\end{itemize}
+
+

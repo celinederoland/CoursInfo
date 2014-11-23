@@ -1,0 +1,33 @@
+\documentclass[a5paper,12pt]{article}
+\usepackage{../style}
+
+
+\newcommand{\montitre}{Algorithmique }
+
+
+\begin{document}
+
+\fiche{Définitions}
+\input{F1_definitions.tex}
+
+\fiche{Notion d'algorithme}
+\input{F2_algorithme.tex}
+
+\fiche{Complexité}
+\input{F3_complexite.tex}
+
+\fiche{Arbres Binaires}
+\input{F4_arbres_binaires.tex}
+
+\fiche{Parcours d'un arbre}
+\input{F5_parcours_arbres.tex}
+
+\fiche{Rotations}
+\input{F6_rotations.tex}
+
+\fiche{AVL}
+\input{F7_AVL.tex}
+
+\fiche{Exemple}
+\input{F8_exemple_AVL.tex}
+\end{document}
