@@ -1,0 +1,13 @@
+\documentclass[a5paper,12pt]{article}
+\usepackage{../../style}
+
+
+\newcommand{\montitre}{Mobile }
+
+
+\begin{document}
+
+\fiche{}
+\input{Includes/01_.tex}
+
+\end{document}

@@ -1,5 +1,5 @@
 \documentclass[a5paper,12pt]{article}
-\usepackage{../style}
+\usepackage{../../style}
 
 
 \newcommand{\montitre}{C++ }

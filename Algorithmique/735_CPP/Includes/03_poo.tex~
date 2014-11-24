@@ -1,0 +1,27 @@
+\titre{Intro} C++ offre presque tous les mécanismes de POO usuels :
+\begin{itemize}
+	\item Méthodes de classe et d'instance
+	\item Attributs de classe et d'instance
+	\item Héritage simple et multiple
+	\item Classes abstraites, interfaces
+	\item Polymorphisme (dynamique)
+	\item Encapsulation
+	\item Transtypage
+\end{itemize}
+Mais pour des raisons d'efficacité, on a pas :
+\begin{itemize}
+	\item Mécanismes d'introspection. On peut néanmoins tester le type d'un objet à l'exécution.
+	\item On ne peut pas changer le code d'une méthode à l'exécution.
+\end{itemize}
+
+\titre{Héritage, sous typage} : On peut préciser qu'une classe possède tous les attributs et méthodes d'une autre classe. \\
+
+\titre{Polymorphisme dynamique} : En POO, l'héritage sert souvent à manipuler de façon homogène des objets de types distinct (ex : les IHM) \\
+En C++, on indiquera qu'une méthode est polymorphe via le mot clé virtual. \\
+Si une méthode est virtuelle, alors le destructeur de la classe doit être virtuel. \\
+On peut forcer une méthode à être abstraite (donc forcément virtuelle) en écrivant =0 lors de sa déclaration. Dans ce cas la classe est abstraite et ne peut être instanciée. \\
+
+\titre{Surcharge} : On peut définir plusieurs méthodes avec le même nom et une signature différente. La surcharge permet la généricité, puisqu'on peut appeler une même fonction ou méthode avec plusieurs variantes de paramètres. \\
+
+\titre{Transtypage} : Dans une hiérarchie de classe, on peut changer le type directement de fille vers mère. \\
+A l'inverse, on peut revenir du type d'une classe mère vers une class fille mais on spécifit le transtypage via le mot clé dynamic_cast. Ce n'est possible que si la classe mère est polymorphe. 
