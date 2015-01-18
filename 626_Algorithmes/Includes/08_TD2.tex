@@ -1,0 +1,10 @@
+\titre{Exercice 5 :} \\
+\includegraphics{Images/fig2.pdf} \\
+On effectue $n$ opérations : $E$ l'ensemble des $e_i$ les enfilements, et $D$ l'ensemble de $d_i$ les défilements. \\
+Cout total = $\sum e_i + \sum d_i$. \\
+On a $\sum e_i \leq n$ car le cout d'un $e_i$ est 1. \\
+Une fois qu'on a dépilé $P_1$ avec un cout égal à la taille de $P_1$, il se passe exactement taille de $P_1$ opérations avec un cout de 1, puis on recommence ce cycle. \\
+$\sum d_i = tP1 + \sum_{k=1}^{tP1}1 + t'P1 + \sum_{k=1}^{t'P1}1 \ldots \leq 2n$ \\
+Conclusion : Cout total $\leq 3n$. Donc Cout total est $O(n)$. \\
+De plus, si on ne fait que des empilements le cout est $\theta(n)$. Donc Cout total est $\theta(n)$. \\
+Donc le cout amorti est $\frac{\theta(n)}{n}=\theta(1)$

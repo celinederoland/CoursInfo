@@ -1,0 +1,90 @@
+\titre{Exo1, question1 :}
+\begin{enumerate}
+	\item ((a+b)(a+b))*
+	\item b*(ab*ab*)*
+	\item b*(ab*ab*)* + a*(ba*ba*)*
+	\item (impAimpBimpAimpB ou impApaireBimpA ou paireApaireB)
+	\item paireA = (aa)*, paireB = (bb)*, impA = a
+\end{enumerate}
+
+\titre{Exo2, question1 :}
+\begin{enumerate}
+	\item (ab)*
+	\item (a*b*)* = (a+b)*
+	\item (abc)* + (d(abc)*)* = (abc + d)*
+\end{enumerate}
+
+\titre{Exo3, question1 :}
+\begin{enumerate}
+	\item (a*+ab)(aab+bb*a+bb)* OUI $a\in L(R)$
+	\item (b*a+b)(aab+bb*a+bb)* NON $b\not\in L(R)$
+	\item (b*a+b)(aab+bb*a+bb)* NON $ab\not\in L(R)$
+\end{enumerate}
+
+\titre{Exo3, question2 :}
+\begin{enumerate}
+	\item $R/a$
+	\begin{enumerate}
+		\item aa(aaa)*
+		\item aa(aaa)* + aaaa(aaaaa)*
+		\item (aa + aaaa)(aaa + aaaaa)*
+	\end{enumerate}
+	\item $R/aa$
+	\begin{enumerate}
+		\item a(aaa)*
+		\item a(aaa)* + aaa(aaaaa)*
+		\item (a + aaa)(aaa + aaaaa)*
+	\end{enumerate}
+	\item $R/aaa$
+	\begin{enumerate}
+		\item (aaa)*
+		\item (aaa)* + aa(aaaaa)*
+		\item (1 + aa)(aaa + aaaaa)*
+	\end{enumerate}
+	\item $R/a^k$
+	\begin{enumerate}
+		\item $\left\{ \begin{array}{lll}
+				\mathrm{(aaa)*} & \mathrm{Si } \; k = 0 [3] & \mathrm{OUI}\\
+				\mathrm{aa(aaa)*} & \mathrm{Si } \; k = 1 [3] & \mathrm{NON} \\
+				\mathrm{a(aaa)*} & \mathrm{Si } \; k = 2 [3] & \mathrm{NON} \\
+				\end{array} \right.$
+		\item $\left\{ \begin{array}{lll}
+				\mathrm{(aaa)* + (aaaaa)*} & \mathrm{Si } \; k = 0 [15] & \mathrm{OUI}\\
+				\mathrm{aa(aaa)* + aaaa(aaaaa)*} & \mathrm{Si } \; k = 1 [15] & \mathrm{NON}\\
+				\mathrm{a(aaa)* + aaa(aaaaa)*} & \mathrm{Si } \; k = 2 [15] & \mathrm{NON}\\
+				\mathrm{(aaa)* + aa(aaaaa)*} & \mathrm{Si } \; k = 3 [15] & \mathrm{OUI}\\
+				\mathrm{aa(aaa)* + a(aaaaa)*} & \mathrm{Si } \; k = 4 [15] & \mathrm{NON}\\
+				\mathrm{a(aaa)* + (aaaaa)*} & \mathrm{Si } \; k = 5 [15] & \mathrm{OUI}\\
+				\mathrm{(aaa)* + aaaa(aaaaa)*} & \mathrm{Si } \; k = 6 [15] & \mathrm{OUI}\\
+				\mathrm{aa(aaa)* + aaa(aaaaa)*} & \mathrm{Si } \; k = 7 [15] & \mathrm{NON}\\
+				\mathrm{a(aaa)* + aa(aaaaa)*} & \mathrm{Si } \; k = 8 [15] & \mathrm{NON}\\
+				\mathrm{(aaa)* + a(aaaaa)*} & \mathrm{Si } \; k = 9 [15] & \mathrm{OUI}\\
+				\mathrm{aa(aaa)* + (aaaaa)*} & \mathrm{Si } \; k = 10 [15] & \mathrm{OUI}\\
+				\mathrm{a(aaa)* + aaaa(aaaaa)*} & \mathrm{Si } \; k = 11 [15] & \mathrm{NON}\\
+				\mathrm{(aaa)* + aaa(aaaaa)*} & \mathrm{Si } \; k = 12 [15] & \mathrm{OUI}\\
+				\mathrm{aa(aaa)* + aa(aaaaa)*} & \mathrm{Si } \; k = 13 [15] & \mathrm{NON}\\
+				\mathrm{a(aaa)* + a(aaaaa)*} & \mathrm{Si } \; k = 14 [15] & \mathrm{NON}\\
+			\end{array} \right.$
+		\item $\left\{ \begin{array}{lll}
+				\mathrm{R*} & \mathrm{Si } \; k = 0 & \mathrm{OUI}\\
+				\mathrm{R_1 = (aa + aaa)R*} & \mathrm{Si } \; k = 1 & \mathrm{NON}\\
+				\mathrm{R_2 = (a + aa)R*} & \mathrm{Si } \; k = 2 & \mathrm{NON}\\
+				\mathrm{R_3 = (1 + a)R*} & \mathrm{Si } \; k = 3 & \mathrm{OUI}\\
+				\mathrm{R_4 = R* + R_1} & \mathrm{Si } \; k = 4 & \mathrm{OUI}\\
+				\mathrm{R_5 = R_1 + R_2} & \mathrm{Si } \; k = 5 & \mathrm{NON}\\
+				\mathrm{R_6 = R_2 + R_3} & \mathrm{Si } \; k = 6 & \mathrm{OUI}\\
+				\mathrm{R_7 = R_3 + R* + R_1} & \mathrm{Si } \; k = 7 & \mathrm{OUI}\\
+				\mathrm{R_8 = R* + R_1 + R_2} & \mathrm{Si } \; k = 8 & \mathrm{OUI}\\
+				\mathrm{R_9 = R_1 + R_2 + R_3} & \mathrm{Si } \; k = 9 & \mathrm{OUI}\\
+				\mathrm{R_{10} = R* + R_1 + R_2 + R_3} & \mathrm{Si } \; k \geq 10 & \mathrm{OUI}\\
+				\end{array} \right.$
+	\end{enumerate}
+\end{enumerate}
+
+\titre{Exo3, Question 3}
+\begin{enumerate}
+	\item Les dérivées possibles sont (aaa)*+(bbb)*,aa(aaa)*,a(aaa)*,(aaa)*,0,bbbb(bbbbb)*,bbb(bbbbb)*,bb(bbbbb)*,b(bbbbb)*,(bbbbb)*
+	\item Les dérivées possibles sont R*,aaR*,aR*,0,bR*,bbR*,bbbR*,bbbbR*
+\end{enumerate}
+
+\titre{Exo3, Question 5} On calcule le graphe et on le parcourt en suivant les lettres de l'expression demandée. On calcule la complexité sans tenir compte du temps de calcul du graphe : c'est le nombre de caractères du mot.

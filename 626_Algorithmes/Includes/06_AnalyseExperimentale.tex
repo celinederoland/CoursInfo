@@ -1,0 +1,11 @@
+\titre{Principe :} On mesure de façon expérimentale le temps d'exécution de 2 programmes pour des valeurs de $n$ données, avec $T_1(n) = n^2$ et $T_2(n) = 1000n$ : 
+$$\begin{array}{c|c|c|c|c|c|}
+n	& 10 & 20 & 40 & 80 & 160 \\ \hline
+T_1 & & & & & \\ \hline
+T_2 & & & & & \\ \hline
+\end{array}$$
+
+\titre{Idée :} On va tracer les courbes dans un repère utilisant une échelle logarithmique. Alors la fonction $an^b$ devient $\log_2(a) + b\log_2(n)$ \\
+Preuve : $\log(T(n)) = \log(an^b) = \log a + \log n^b = \log a + b\log(n)$ \\
+
+\titre{Pour les complexités en $an^b\log(n)$ :} Poser $T_2(n) = \frac{T(n)}{n^b}$ et mettre l'échelle logarithmique sur l'axe des abscisses.

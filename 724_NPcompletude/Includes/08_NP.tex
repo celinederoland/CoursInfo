@@ -1,0 +1,56 @@
+\titre{Algo polynomial :} Complexité en $O(n^k)$
+
+\titre{Types de problèmes :}
+\begin{enumerate}
+	\item D : Décision (OUI ou NON)
+	\item O : Optimisation (+ grande ou + petite valeur qui satisfait un critère)
+	\item E : Existence (on cherche un élément qui satisfait un critère)
+\end{enumerate}
+La plupart des problèmes peuvent se décliner sous ces 3 formes, et si D est polynomial alors les autres aussi. On se contentera donc d'étudier la version D des problèmes. \\
+
+\titre{Réduction polynomial :} Soient $P_1$ et $P_2$ deux problèmes.\\
+On appelle réduction polynomiale de $P_1$ vers $P_2$ un algo $R$ polynomial qui transforme toute instance $I_1$ de $P_1$ en une instance $I_2$ de $P_2$ telle que $P_1(I_1) = P_2(I_2)$. \\
+S'il existe une réduction polynomiale de $P_1$ vers $P_2$, on note $P_1 \leq_p P_2$. \\
+
+\titre{Théorème :} Soient $P_1$ et $P_2$ deux problèmes tels que $P_1 \leq_p P_2$.
+\begin{itemize}
+	\item Si $P_2$ est polynomial alors $P_1$ aussi
+	\item Si $P_1$ n'est pas polynomial alors $P_2$ non plus (forme contraposée)
+\end{itemize}
+
+\titre{Preuve} Il suffit de poser $A_1 = A_2 \circ R$. Si $A_2$ est en $O(n^k)$ et $R$ en $O(n^l)$, alors $A_1$ est en $O(n^{lk})$. \\
+
+\titre{Equivalence polynomiale :} On dit que $P_1$ et $P_2$ sont polynomialement équivalents si $P_1 \leq_p P_2$ et $P_2 \leq_p P_1$. On le note $P_1 =_p P_2$\\
+
+\titre{Relations :} $=_p$ est une relation d'équivalence et $\leq_p$ est une relation d'ordre. \\
+
+\titre{Théorème :} Tous les problèmes polynomiaux sont polynomialement équivalents (même classe d'équivalence). \\
+
+\titre{Preuve :} Soit $I_{OUI}$ et $I_{NON}$ deux instances de $P_2$ telles que $P_2(I_{OUI}) = OUI$ et $P_2(I_{NON}) = NON$. \\
+Il suffit de définir ainsi l'algo $R$ : \\Si $P_1(I) = OUI$ Alors retourner $I_{OUI}$ \\ Sinon retourner $I_{NON}$
+
+\titre{2 Classes d'équivalence utiles :} (il existe une infinité de classes d'équivalence)
+\begin{itemize}
+	\item P : Ensemble des problèmes pour lesquels il existe un algo qui calcule une solution en temps polynomial
+	\item NP : Ensemble des problèmes pour lesquels il existe un algo de vérification en temps polynomial
+\end{itemize}
+
+\titre{NP-Difficulté} Un problème $P_0$ est NP-Difficile si pour tout problème $P_1 \in $ NP, on a $P_1 \leq_p P_0$ \\
+
+\titre{NP-Complétude} Un problème $P_0$ est NP-Complet si : 
+\begin{itemize}
+	\item $P_0 \in $ NP
+	\item $P_0$ est NP-Difficile
+\end{itemize}
+
+\titre{Premier problème NP-Difficile} Théorème de Cook
+\begin{itemize}
+	\item SAT est dans NP (le vérificateur est facile)
+	\item SAT est NP-Difficile : Tout problème de NP peut être réduit en SAT :
+	\begin{itemize}
+		\item On part d'une instance $I$ d'un problème de NP, $V$ le vérificateur fixe, $C$ le certificate quelconque (valeur quelconque dans chaque partie de la RAM contenant $C$).
+		\item On écrit une expression booléenne qui vérifie l'exécution de $V$ dans la RAM avec $I$ donné, $C$ quelconque et réponse OUI à la fin. Cette expression booléenne se construit en temps polynomial car elle est de taille polynomiale.
+	\end{itemize}
+\end{itemize}
+
+\titre{SAT $\impl$ FNC $\impl$ 3-SAT} : Voir petite astuce sur le wiki pour transformer une clause en 3-clause.
